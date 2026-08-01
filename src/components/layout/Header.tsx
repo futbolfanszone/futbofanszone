@@ -68,7 +68,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="fixed inset-x-0 bottom-0 top-[4.5rem] overflow-y-auto bg-navy-deep md:hidden">
+        <div className="absolute inset-x-0 top-full h-[calc(100dvh-4.5rem)] overflow-y-auto bg-navy-deep md:hidden">
           <nav
             id="mobile-navigation"
             aria-label="Mobile navigation"
@@ -78,20 +78,20 @@ export function Header() {
               Explore Futbol Fans Zone
             </p>
             <div className="flex flex-col border-t border-ice/10">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "flex min-h-14 items-center justify-between border-b border-ice/10 text-xl font-bold uppercase tracking-wide text-ice/80 transition active:bg-ice/5",
-                  pathname === link.href && "text-yellow",
-                )}
-              >
-                <span>{link.label}</span>
-                <ArrowUpRight className="h-5 w-5 text-ice/35" />
-              </Link>
-            ))}
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "flex min-h-14 items-center justify-between border-b border-ice/10 text-xl font-bold uppercase tracking-wide text-ice/80 transition active:bg-ice/5",
+                    pathname === link.href && "text-yellow",
+                  )}
+                >
+                  <span>{link.label}</span>
+                  <ArrowUpRight className="h-5 w-5 text-ice/35" />
+                </Link>
+              ))}
             </div>
             <Link
               href="/subscribe"

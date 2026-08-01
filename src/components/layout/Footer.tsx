@@ -6,7 +6,7 @@ import { NAV_LINKS, SITE } from "@/lib/constants";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-white/10 bg-navy-deep">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-10 px-5 py-12 md:grid-cols-3 md:px-6">
+      <div className="mx-auto grid max-w-6xl grid-cols-[0.8fr_1.2fr] gap-x-5 gap-y-10 px-5 py-12 md:grid-cols-3 md:gap-x-10 md:px-6">
         <div className="col-span-2 md:col-span-1">
           <Logo variant="light" mark="full" className="w-40 md:w-44" />
           <p className="mt-4 max-w-xs font-chant text-lg text-ice/80">
@@ -39,7 +39,10 @@ export function Footer() {
           </p>
           <ul className="mt-4 space-y-3 break-words text-sm text-ice/70">
             <li>
-              <a href={`mailto:${SITE.email}`} className="hover:text-yellow">
+              <a
+                href={`mailto:${SITE.email}`}
+                className="text-[11px] hover:text-yellow sm:text-sm"
+              >
                 {SITE.email}
               </a>
             </li>

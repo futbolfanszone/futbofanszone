@@ -138,9 +138,10 @@ a {
 }
 
 .home-hero-art {
+  opacity: 0.34;
   background-position: 48% 30%;
   background-repeat: no-repeat;
-  background-size: 210% auto;
+  background-size: 185% auto;
 }
 
 .no-scrollbar {
@@ -159,6 +160,7 @@ a {
   .home-hero-art {
     background-position: center;
     background-size: cover;
+    opacity: 1;
   }
 }
 

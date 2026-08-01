@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   icons: {
     icon: "/favicon.png",
-    apple: BRAND.assets.badgeLight,
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: SITE.name,

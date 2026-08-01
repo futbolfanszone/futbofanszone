@@ -28,7 +28,7 @@ export default function HomePage() {
               mark="full"
               href={null}
               priority
-              className="w-52 sm:w-64 md:w-[360px]"
+              className="w-52 sm:w-64 md:hidden"
             />
           </div>
           <h1 className="animate-rise-delay mt-4 font-chant text-4xl leading-none text-yellow sm:text-5xl md:mt-6 md:text-6xl">
