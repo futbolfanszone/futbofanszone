@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette from assets/Colors.png */
+  --navy: #1b4075;
+  --navy-deep: #0d2342;
+  --green: #16b016;
+  --green-bright: #40d840;
+  --yellow: #fff34d;
+  --yellow-deep: #f8e803;
+  --blue: #096ad3;
+  --blue-bright: #2987ed;
+  --orange: #da532e;
+  --orange-bright: #fc411d;
+  --ice: #f3f9ff;
+  --ice-muted: #d3e8ff;
+
+  --ink: var(--navy-deep);
+  --ink-soft: var(--navy);
+  --accent: var(--yellow);
+  --accent-bright: var(--yellow-deep);
+  --accent-alt: var(--green-bright);
+  --foreground: var(--ice);
+  --muted: rgba(243, 249, 255, 0.68);
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-green: var(--green);
+  --color-green-bright: var(--green-bright);
+  --color-yellow: var(--yellow);
+  --color-yellow-deep: var(--yellow-deep);
+  --color-blue: var(--blue);
+  --color-blue-bright: var(--blue-bright);
+  --color-orange: var(--orange);
+  --color-orange-bright: var(--orange-bright);
+  --color-ice: var(--ice);
+  --color-ice-muted: var(--ice-muted);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-alt: var(--accent-alt);
+  --color-background: var(--ink);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-field-gothic);
+  --font-display: var(--font-field-gothic);
+  --font-chant: var(--font-tac-one);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: var(--ink);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-field-gothic), "Arial Narrow", sans-serif;
+  font-weight: 400;
+}
+
+.font-display {
+  font-family: var(--font-field-gothic), "Arial Narrow", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.font-chant {
+  font-family: var(--font-tac-one), Impact, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.hero-atmosphere {
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 15%, rgba(41, 135, 237, 0.35), transparent 55%),
+    radial-gradient(ellipse 45% 40% at 10% 85%, rgba(22, 176, 22, 0.22), transparent 50%),
+    linear-gradient(165deg, #0d2342 0%, #1b4075 48%, #0d2342 100%);
+}
+
+.pitch-lines {
+  background-image:
+    linear-gradient(rgba(243, 249, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 249, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-soft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.7s ease-out both;
+}
+
+.animate-rise-delay {
+  animation: rise-in 0.8s ease-out 0.15s both;
+}
+
+.animate-fade {
+  animation: fade-soft 1s ease-out 0.3s both;
+}
+
+.section-pad {
+  @apply px-4 py-16 md:px-6 md:py-24;
 }
