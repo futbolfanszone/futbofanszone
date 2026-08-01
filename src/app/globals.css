@@ -51,6 +51,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -58,6 +59,20 @@ body {
   color: var(--foreground);
   font-family: var(--font-field-gothic), "Arial Narrow", sans-serif;
   font-weight: 400;
+  overflow-x: clip;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
 }
 
 .font-display {
@@ -119,5 +134,45 @@ body {
 }
 
 .section-pad {
-  @apply px-4 py-16 md:px-6 md:py-24;
+  @apply px-5 py-14 md:px-6 md:py-24;
+}
+
+.home-hero-art {
+  background-position: 48% 30%;
+  background-repeat: no-repeat;
+  background-size: 210% auto;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .home-hero-art {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

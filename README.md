@@ -1,6 +1,8 @@
-# Futbol Fan Zone
+# Futbol Fans Zone
 
-Fan-first football media site for [futbolfanzone.com](https://futbolfanzone.com) — newsletter, show/job applications, admin review dashboard, and a merch-ready shop placeholder.
+Fan-first football media site for [futbolfanszone.com](https://futbolfanszone.com) — newsletter, show/job applications, admin review dashboard, and a merch-ready shop placeholder.
+
+> New here (human or AI agent)? Read [`CONTEXT.md`](CONTEXT.md) for a full handover: what the project does, what's built, and what's left.
 
 ## Stack
 
@@ -40,7 +42,7 @@ npm run dev
 ### Resend
 
 1. Create an API key at [resend.com](https://resend.com).
-2. Verify `futbolfanzone.com` (SPF/DKIM) for production sending.
+2. Verify `futbolfanszone.com` (SPF/DKIM) for production sending.
 3. Create an Audience and set `RESEND_AUDIENCE_ID`.
 4. Set `RESEND_FROM_EMAIL` to a verified address.
 
@@ -52,7 +54,7 @@ Visit `/admin/login` and sign in with `ADMIN_PASSWORD` (defaults to `admin` in l
 
 1. Push this repo and create a Netlify site from it.
 2. Set all env vars from `.env.example` in Netlify → Site settings → Environment variables.
-3. Point `futbolfanzone.com` DNS to Netlify.
+3. Point `futbolfanszone.com` DNS to Netlify.
 4. Verify the sending domain in Resend.
 
 Build settings are in `netlify.toml` (Node 20 + Next.js plugin).

@@ -3,9 +3,9 @@ export const SITE = {
   tagline: "For the fans.",
   description:
     "Fan-first football storytelling — debate, quiz shows, match reactions, and the culture that lives beyond the final whistle.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://futbolfanzone.com",
-  email: "hello@futbolfanzone.com",
-  phone: "+1 (555) 010-ZONE",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://futbolfanszone.com",
+  email: "adams@futbolfanszone.com",
+  phone: "+1 (214) 682-8228",
 } as const;
 
 export const SOCIAL = {

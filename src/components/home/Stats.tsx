@@ -62,17 +62,17 @@ export function Stats() {
   const inView = useInView(ref);
 
   return (
-    <section
-      ref={ref}
-      className="border-y border-ice/10 bg-navy py-14"
-    >
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-3 md:px-6">
+    <section ref={ref} className="border-y border-ice/10 bg-navy py-8 md:py-14">
+      <div className="mx-auto grid max-w-6xl grid-cols-3 px-2 md:px-6">
         {ITEMS.map((item) => (
-          <div key={item.label} className="text-center">
-            <p className="font-chant text-5xl text-yellow md:text-6xl">
+          <div
+            key={item.label}
+            className="border-l border-ice/10 px-2 text-center first:border-l-0 md:px-6"
+          >
+            <p className="font-chant text-3xl leading-none text-yellow sm:text-4xl md:text-6xl">
               <Counter end={item.end} suffix={item.suffix} active={inView} />
             </p>
-            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-ice/50">
+            <p className="mt-2 text-[9px] font-medium uppercase leading-tight tracking-[0.13em] text-ice/55 sm:text-xs md:text-sm md:tracking-[0.18em]">
               {item.label}
             </p>
           </div>

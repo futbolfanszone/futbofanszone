@@ -13,8 +13,20 @@ type Props = {
 };
 
 const SIZES = {
-  full: { width: 220, height: 72, className: "h-10 w-auto md:h-12" },
-  badge: { width: 56, height: 64, className: "h-10 w-auto md:h-11" },
+  full: {
+    width: 5334,
+    height: 3000,
+    frameClassName: "aspect-[1.61] w-28 md:w-32",
+    imageClassName:
+      "-left-[41.8%] -top-[28.2%] h-[163%] w-[180%] max-w-none",
+  },
+  badge: {
+    width: 5334,
+    height: 3000,
+    frameClassName: "aspect-[0.66] w-10 md:w-11",
+    imageClassName:
+      "-left-[162%] -top-[10%] h-[143%] w-[385%] max-w-none",
+  },
 } as const;
 
 export function Logo({
@@ -36,20 +48,33 @@ export function Logo({
   const size = SIZES[mark];
 
   const image = (
-    <Image
-      src={src}
-      alt={BRAND.name}
-      width={size.width}
-      height={size.height}
-      priority={priority}
-      className={cn(size.className, "object-contain", className)}
-    />
+    <span
+      className={cn(
+        "relative inline-block shrink-0 overflow-hidden",
+        size.frameClassName,
+        className,
+      )}
+    >
+      <Image
+        src={src}
+        alt={BRAND.name}
+        width={size.width}
+        height={size.height}
+        priority={priority}
+        sizes={mark === "full" ? "(max-width: 768px) 224px, 360px" : "72px"}
+        className={cn("absolute object-contain", size.imageClassName)}
+      />
+    </span>
   );
 
   if (href === null) return image;
 
   return (
-    <Link href={href} aria-label={BRAND.name} className="inline-flex items-center">
+    <Link
+      href={href}
+      aria-label={BRAND.name}
+      className="inline-flex items-center rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow"
+    >
       {image}
     </Link>
   );
