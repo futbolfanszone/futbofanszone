@@ -1,4 +1,13 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import WebSocket from "ws";
+
+// Supabase's realtime client needs a WebSocket implementation. Node < 22 has no
+// native WebSocket, so createClient() would otherwise throw on construction.
+// We only use the database, so this just satisfies the dependency.
+const globalWithWs = globalThis as unknown as { WebSocket?: unknown };
+if (!globalWithWs.WebSocket) {
+  globalWithWs.WebSocket = WebSocket as unknown;
+}
 
 export type SubscriberStatus = "pending" | "confirmed" | "unsubscribed";
 export type ApplicationType = "quiz" | "job" | "general";
